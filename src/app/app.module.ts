@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { ComponentModule } from './components/component.module';
 import { PageModule } from './pages/page.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PageModule } from './pages/page.module';
     BrowserAnimationsModule,
     MatButtonModule,
     ComponentModule,
-    PageModule
+    PageModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

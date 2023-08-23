@@ -1,0 +1,12 @@
+{
+    "movies": [
+        {
+            "id": 1,
+            "title": "",
+            "director": "typicode",
+            "year": "",
+            "image": "",
+            "description": ""
+        }
+    ]
+}
