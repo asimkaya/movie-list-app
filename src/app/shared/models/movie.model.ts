@@ -4,6 +4,7 @@ export interface Movie extends General {
     year: Date | string;
     image: string;
     description?: string;
+    type: string;
 }
 
 interface General {

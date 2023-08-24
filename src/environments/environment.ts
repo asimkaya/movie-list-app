@@ -1,3 +1,3 @@
 export const environment = {
-    apiUrl: 'http://localhost:3000'
+    apiUrl: 'https://my-json-server.typicode.com/asimkaya/movie-list-app'
 };
