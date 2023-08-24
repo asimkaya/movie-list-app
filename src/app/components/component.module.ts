@@ -6,18 +6,21 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { LoaderComponent } from './loader/loader.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
 @NgModule({
-  declarations: [NavbarComponent, MovieCardComponent],
+  declarations: [NavbarComponent, MovieCardComponent, LoaderComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
-  exports: [NavbarComponent, MovieCardComponent]
+  exports: [NavbarComponent, MovieCardComponent, LoaderComponent]
 })
 export class ComponentModule { }
