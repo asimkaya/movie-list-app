@@ -1,0 +1,32 @@
+.home-main {
+    padding-top: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+
+        .card {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+
+@media (max-width: 1105px) {
+    .cards {
+        grid-template-columns: repeat(1, 1fr) !important;
+        padding: 0 10px;
+    }
+}
+
+.spinner-loading {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

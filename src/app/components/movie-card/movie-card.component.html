@@ -1,9 +1,9 @@
 <mat-card class="card">
     <mat-card-header>
         <mat-card-title> {{movieData.title}} </mat-card-title>
-        <mat-card-subtitle>{{ movieData.type }}</mat-card-subtitle>
+        <mat-card-subtitle>{{ movieData.director }}</mat-card-subtitle>
     </mat-card-header>
-    <img [src]="'data:image/jpeg;base64,'+ movieData.image" alt="">
+    <img [src]="'data:image/jpeg;base64,'+ movieData.image" alt="Movie Card Image">
     <mat-card-actions>
         <button mat-raised-button color="warn">Sil</button>
         <button mat-raised-button color="primary">Düzenle</button>

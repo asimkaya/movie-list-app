@@ -1,1 +1,6 @@
-<p>home works!</p>
+<div class="home-main" [class.spinner-loading]="loading">
+    <app-loader *ngIf="loading" [size]="100"></app-loader>
+    <div *ngIf="!loading" class="cards">
+        <app-movie-card *ngFor="let item of movies" [movieData]="item" class="card"></app-movie-card>
+    </div>
+</div>
