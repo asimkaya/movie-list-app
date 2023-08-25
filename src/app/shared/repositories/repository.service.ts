@@ -42,7 +42,22 @@ export class RepositoryService {
         dialogTitle: title,
         dialogData: data
       },
-      width: '500px'
+      width: '500px',
     });
+
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.getAllMovies();
+    });
+  }
+
+  editMovie(data: Movie) {
+    this.api.EditMovie(data).subscribe({
+      next: (data) => {
+        console.log(data);
+      }, error: (err) => {
+        console.warn(err);
+      }
+    })
   }
 }

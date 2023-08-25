@@ -23,6 +23,17 @@ export class MovieService {
     )
   }
 
+  EditMovie(data: Movie): Observable<any> {
+    console.log(data);
+    return this.http.put(environment.apiUrl + '/movies/' + String(data.id), {
+      id: data.id,
+      title: data.title,
+      director: data.director,
+      year: new Date(data.year).toISOString(),
+      image: data.image
+    })
+  }
+
   //Hata Yakalama
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {

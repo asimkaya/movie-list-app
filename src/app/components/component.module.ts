@@ -9,11 +9,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { LoaderComponent } from './loader/loader.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MovieDialogComponent } from './movie-dialog/movie-dialog.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
 @NgModule({
-  declarations: [NavbarComponent, MovieCardComponent, LoaderComponent],
+  declarations: [NavbarComponent, MovieCardComponent, LoaderComponent, MovieDialogComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -21,7 +27,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatCardModule,
     MatIconModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [NavbarComponent, MovieCardComponent, LoaderComponent]
 })
