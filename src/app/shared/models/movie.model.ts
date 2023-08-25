@@ -10,3 +10,7 @@ export interface Movie extends General {
 interface General {
     id: number;
 }
+export interface DialogModel {
+    dialogTitle: string;
+    dialogData: Movie;
+}

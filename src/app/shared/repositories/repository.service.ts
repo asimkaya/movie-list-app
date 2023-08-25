@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { MovieService } from '../services/movie.service';
 import { Movie } from '../models/movie.model';
+import { MatDialog } from '@angular/material/dialog';
+import { MovieDialogComponent } from 'src/app/components/movie-dialog/movie-dialog.component';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ export class RepositoryService {
   public loading: boolean = true;
   public movies!: Movie[];
 
-  constructor(private api: MovieService) { }
+  constructor(private api: MovieService, public dialog: MatDialog) { }
 
   deleteMovie(id: number) {
     if (confirm('Silmek istediğinize emin misiniz?')) {
@@ -32,5 +34,15 @@ export class RepositoryService {
         console.warn(error);
       }
     })
+  }
+
+  openDialog(data: Movie, title: string) {
+    let dialogRef = this.dialog.open(MovieDialogComponent, {
+      data: {
+        dialogTitle: title,
+        dialogData: data
+      },
+      width: '500px'
+    });
   }
 }
