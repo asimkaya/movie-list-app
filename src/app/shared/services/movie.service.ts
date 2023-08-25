@@ -34,6 +34,10 @@ export class MovieService {
     })
   }
 
+  AddMovie(data: Movie): Observable<any> {
+    return this.http.post(environment.apiUrl + '/movies', data);
+  }
+
   //Hata Yakalama
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {

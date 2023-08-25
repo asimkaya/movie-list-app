@@ -19,6 +19,8 @@ export class RepositoryService {
       this.api.DeleteMovie(id).subscribe({
         next: (data) => {
           console.log(data);
+          this.openSnackBar('Başarılı bir şekilde silindi', 'Tamam');
+          this.getAllMovies();
         }, error: (err) => {
           console.warn(err);
         }
@@ -46,10 +48,14 @@ export class RepositoryService {
       width: '500px',
     });
 
-
     dialogRef.afterClosed().subscribe(result => {
       this.getAllMovies();
-      this.openSnackBar('Başarılı bir şekilde kaydedildi', 'Tamam');
+      if (result == 'Düzenle') {
+        this.openSnackBar('Başarılı bir şekilde kaydedildi', 'Tamam');
+
+      } else if (result == 'Yeni Ekle') {
+        this.openSnackBar('Başarılı bir şekilde eklendi', 'Tamam');
+      }
     });
   }
 
@@ -60,6 +66,14 @@ export class RepositoryService {
       }, error: (err) => {
         console.warn(err);
       }
+    })
+  }
+
+  addMovie(data: Movie) {
+    this.api.AddMovie(data).subscribe({
+      next: (movie) => {
+        console.log(movie);
+      }, error: (err) => console.warn(err)
     })
   }
 

@@ -1,8 +1,8 @@
 export interface Movie extends General {
-    title: string;
-    director: string;
+    title?: string;
+    director?: string;
     year: Date | string;
-    image: string;
+    image?: string;
 }
 
 interface General {

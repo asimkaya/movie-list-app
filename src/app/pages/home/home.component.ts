@@ -9,6 +9,13 @@ import { RepositoryService } from 'src/app/shared/repositories/repository.servic
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  setNullForNewMovie: Movie = {
+    title: undefined,
+    director: undefined,
+    year: '',
+    image: undefined,
+    id: 0
+  }
   constructor(private api: MovieService, public repo: RepositoryService) { }
 
   ngOnInit(): void {

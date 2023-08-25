@@ -1,5 +1,12 @@
 <div class="home-main" [class.spinner-loading]="repo.loading">
     <app-loader *ngIf="repo.loading" [size]="100"></app-loader>
+    <div class="filter-area" *ngIf="!repo.loading">
+        <div>
+            <button mat-fab color="primary" (click)="repo.openDialog(setNullForNewMovie, 'Yeni Ekle')">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+    </div>
     <div *ngIf="!repo.loading" class="cards">
         <app-movie-card *ngFor="let item of repo.movies" [movieData]="item" class="card"></app-movie-card>
     </div>
