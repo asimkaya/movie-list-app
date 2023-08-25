@@ -27,7 +27,7 @@
             </mat-form-field>
 
             <div mat-dialog-actions>
-                <button mat-raised-button color="warn" (click)="closeDialog()">İptal</button>
+                <button mat-raised-button color="warn" type="button" (click)="closeDialog('Iptal')">İptal</button>
                 <button mat-raised-button type="submit" color="primary" [disabled]="!movieForm.valid">Kaydet</button>
             </div>
         </form>
