@@ -5,7 +5,12 @@
     </mat-card-header>
     <img [src]="'data:image/jpeg;base64,'+ movieData.image" alt="Movie Card Image">
     <mat-card-actions>
-        <button mat-raised-button color="warn">Sil</button>
-        <button mat-raised-button color="primary">Düzenle</button>
+        <!-- <button mat-raised-button color="primary">Düzenle</button> -->
+        <button mat-mini-fab color="primary">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-mini-fab color="warn" (click)="repo.deleteMovie(movieData.id)">
+            <mat-icon>delete</mat-icon>
+        </button>
     </mat-card-actions>
 </mat-card>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/shared/models/movie.model';
-import { MovieService } from 'src/app/shared/movie.service';
+import { MovieService } from 'src/app/shared/services/movie.service';
+import { RepositoryService } from 'src/app/shared/repositories/repository.service';
 
 @Component({
   selector: 'app-home',
@@ -8,25 +9,9 @@ import { MovieService } from 'src/app/shared/movie.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  movies!: Movie[];
-  loading: boolean = true;
-
-  constructor(private api: MovieService) { }
+  constructor(private api: MovieService, public repo: RepositoryService) { }
 
   ngOnInit(): void {
-    this.getAllMovies();
+    this.repo.getAllMovies();
   }
-
-  getAllMovies() {
-    this.api.GetMovies().subscribe({
-      next: async (data: Movie[]) => {
-        console.log(data);
-        this.movies = await data;
-        this.loading = await false;
-      }, error: (error) => {
-        console.warn(error);
-      }
-    })
-  }
-
 }
