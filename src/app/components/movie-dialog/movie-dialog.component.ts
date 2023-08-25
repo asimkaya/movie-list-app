@@ -20,7 +20,7 @@ export class MovieDialogComponent {
     director: new FormControl(this.data.dialogData.director, Validators.required),
     year: new FormControl(new Date(this.data.dialogData.year), Validators.required),
     image: new FormControl(this.data.dialogData.image, [Validators.required, Validators.pattern('(https?:\/\/.*\.(?:png|jpg))')]),
-    id: new FormControl(this.data.dialogData.id)
+    id: new FormControl((this.data.dialogData.id) ? this.data.dialogData.id : 0)
   })
 
   closeDialog() {

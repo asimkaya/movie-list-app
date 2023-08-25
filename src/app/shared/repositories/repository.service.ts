@@ -3,6 +3,7 @@ import { MovieService } from '../services/movie.service';
 import { Movie } from '../models/movie.model';
 import { MatDialog } from '@angular/material/dialog';
 import { MovieDialogComponent } from 'src/app/components/movie-dialog/movie-dialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class RepositoryService {
   public loading: boolean = true;
   public movies!: Movie[];
 
-  constructor(private api: MovieService, public dialog: MatDialog) { }
+  constructor(private api: MovieService, public dialog: MatDialog, private _snackBar: MatSnackBar) { }
 
   deleteMovie(id: number) {
     if (confirm('Silmek istediğinize emin misiniz?')) {
@@ -48,6 +49,7 @@ export class RepositoryService {
 
     dialogRef.afterClosed().subscribe(result => {
       this.getAllMovies();
+      this.openSnackBar('Başarılı bir şekilde kaydedildi', 'Tamam');
     });
   }
 
@@ -59,5 +61,9 @@ export class RepositoryService {
         console.warn(err);
       }
     })
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
   }
 }
